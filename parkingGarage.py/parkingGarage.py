@@ -21,6 +21,7 @@ class parkingGarage():
                 print( 'There are no more spaces available, please use the left lane to exit.')
         
         print(f'The available spaces are: {self.parkingSpaces} available. ')
+        print(f'The available spaces are: {self.tickets} available. ')
 # <-----------------End of Heathers Section----------> 
 # <-----------------Jesses Section---------->
     def payForParking(self):
@@ -59,6 +60,6 @@ class parkingGarage():
             elif action == 'exit':
                 parking_garage.leaveGarage()
                 break
-            
+
 parking_garage = parkingGarage()
 parking_garage.runner()
