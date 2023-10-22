@@ -7,6 +7,7 @@ class parkingGarage():
 
     def takeTicket(self):
         userPark = input('Would you like to park your car? ').lower()
+        self.parkingSpaces = 100
         while True:
             if userPark == 'yes' and {self.parkingSpaces} != 0:
                 print( 'Please take your ticket ')
@@ -21,17 +22,27 @@ class parkingGarage():
         
         print(f'The available spaces are: {self.parkingSpaces} available. ')
 
+
+
+
+
+
+
+
+
+
+
 # <-----------------End of Heathers Section----------> 
 # <-----------------Jesses Section---------->
     def payForParking(self):
         while True:
-            payment = (input('Please pay $15.  Would you like to pay now?  "Yes" or "No"')).lower()
+            payment = (input('Please pay $15.  Would you like to pay now?  "Yes" or "No" ')).lower()
             if payment == 'yes':
                 self.currentTicket = True
-                print('Your ticket has been paid.  You have 15 minutes to exit the parking garage.') 
+                print('Your ticket has been paid.  You have 15 minutes to exit the parking garage. ') 
                 break  
             elif payment == 'no':
-                print('When ready, please pay ticket to exit the parking garage.')
+                print('When ready, please pay ticket to exit the parking garage. ')
                 break
 # <-----------------End of Jesses Section---------->
 # <-----------------Peters Section---------->
@@ -45,13 +56,14 @@ class parkingGarage():
                 break
             elif self.currentTicket == False:
                 print('Please pay your ticket to exit the parking garage.')
-                break
 
         print(f'The available spaces are: {self.parkingSpaces} available. ')
+        print(f'The available tickets are: {self.tickets} available. ')
+       
 # <-----------------End of Peters Section---------->
     def runner(self):
         while True:
-            action = input('What action are you taking?  Type "enter" to enter the garage.  Type "pay" to pay for your ticket.  Type "exit" to exit the parking garage.').lower()
+            action = input('What action are you taking?  Type "enter" to enter the garage.  Type "pay" to pay for your ticket.  Type "exit" to exit the parking garage. ').lower()
             if action == 'enter':
                 parking_garage.takeTicket()
             elif action == 'pay':
@@ -62,4 +74,5 @@ class parkingGarage():
 
 
 parking_garage = parkingGarage()
+
 parking_garage.runner()
