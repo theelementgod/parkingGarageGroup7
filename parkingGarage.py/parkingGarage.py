@@ -21,7 +21,7 @@ class parkingGarage():
                 print( 'There are no more spaces available, please use the left lane to exit.')
         
         print(f'The available spaces are: {self.parkingSpaces} available. ')
-        print(f'The available spaces are: {self.tickets} available. ')
+        print(f'The available tickets are: {self.tickets} available. ')
 # <-----------------End of Heathers Section----------> 
 # <-----------------Jesses Section---------->
     def payForParking(self):
@@ -46,19 +46,23 @@ class parkingGarage():
                 break
             elif self.currentTicket == False:
                 print('Please pay your ticket to exit the parking garage.')
+                parking_garage.runner()
+                break
 
         print(f'The available spaces are: {self.parkingSpaces} available. ')
         print(f'The available tickets are: {self.tickets} available. ')      
 # <-----------------End of Peters Section---------->
     def runner(self):
         while True:
-            action = input('What action are you taking?  Type "enter" to enter the garage.  Type "pay" to pay for your ticket.  Type "exit" to exit the parking garage. ').lower()
+            action = input('What action are you taking?  Type "enter" to enter the garage.  Type "pay" to pay for your ticket.  Type "exit" to exit the parking garage. Type "quit" to quit. ').lower()
             if action == 'enter':
                 parking_garage.takeTicket()
             elif action == 'pay':
                 parking_garage.payForParking()
             elif action == 'exit':
                 parking_garage.leaveGarage()
+                break
+            else:
                 break
 
 parking_garage = parkingGarage()
