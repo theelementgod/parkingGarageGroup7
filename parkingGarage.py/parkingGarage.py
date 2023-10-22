@@ -7,7 +7,6 @@ class parkingGarage():
 
     def takeTicket(self):
         userPark = input('Would you like to park your car? ').lower()
-        self.parkingSpaces = 100
         while True:
             if userPark == 'yes' and {self.parkingSpaces} != 0:
                 print( 'Please take your ticket ')
