@@ -1,13 +1,12 @@
 # <-----------------Heathers Section---------->
 class parkingGarage():
-    def __init__(self, availability = 3, currentTicket = False):
+    def __init__(self, availability = 100, currentTicket = False):
         self.parkingSpaces = availability
         self.tickets = availability
         self.currentTicket = currentTicket
 
     def takeTicket(self):
         userPark = input('Would you like to park your car? ').lower()
-        self.parkingSpaces = 100
         while True:
             if userPark == 'yes' and {self.parkingSpaces} != 0:
                 print( 'Please take your ticket ')
@@ -21,16 +20,6 @@ class parkingGarage():
                 print( 'There are no more spaces available, please use the left lane to exit.')
         
         print(f'The available spaces are: {self.parkingSpaces} available. ')
-
-
-
-
-
-
-
-
-
-
 
 # <-----------------End of Heathers Section----------> 
 # <-----------------Jesses Section---------->
@@ -52,9 +41,11 @@ class parkingGarage():
                 print('Thank you, have a nice day!')
                 self.parkingSpaces += 1
                 self.tickets += 1
+                self.currentTicket = False
                 break
             elif self.currentTicket == False:
                 print('Please pay your ticket to exit the parking garage.')
+                break
 
         print(f'The available spaces are: {self.parkingSpaces} available. ')
 # <-----------------End of Peters Section---------->
@@ -67,7 +58,6 @@ class parkingGarage():
                 parking_garage.payForParking()
             elif action == 'exit':
                 parking_garage.leaveGarage()
-                self.currentTicket = False
                 break
 
 
